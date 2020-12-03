@@ -1,6 +1,8 @@
 --[[
 Fraction Extensions
 Provides a fractional numeric datatype with exact evaluations
+
+This source of this code is at: https://github.com/LPGhatguy/lua-symbolics
 ]]
 
 local support = require("src.support")
