@@ -32,8 +32,8 @@ function DateSplitter:split(parts)
       month=startDateAsTable.month,
       day=startDateAsTable.day + (slot - 1),
       hour=0,
-      minute=0,
-      second=0
+      min=0,
+      sec=0
     })
     local durationAtSlot = DateSplitter:getDurationAtDate(dateAtSlot)
     local durationInSeconds = DateSplitter:getDurationInSeconds(durationAtSlot[1], durationAtSlot[2])
@@ -110,8 +110,8 @@ function DateSplitter:getDurationAtDate(date)
     month=dateAsTable.month,
     day=dateAsTable.day,
     hour=0,
-    minute=0,
-    second=0
+    min=0,
+    sec=0
   })
 
   local intervalEnd = os.time({
@@ -119,8 +119,8 @@ function DateSplitter:getDurationAtDate(date)
     month=dateAsTable.month,
     day=dateAsTable.day,
     hour=23,
-    minute=59,
-    second=59
+    min=59,
+    sec=59
   })
 
   duration[1] = intervalStart

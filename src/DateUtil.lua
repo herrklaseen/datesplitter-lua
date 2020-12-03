@@ -27,8 +27,8 @@ function DateUtil.setTimeOfDay(date, hour, minute, second)
         month=dateAsTable.month,
         day=dateAsTable.day,
         hour=hour,
-        minute=minute,
-        second=second
+        min=minute,
+        sec=second
     })
 
     return dateAtTime

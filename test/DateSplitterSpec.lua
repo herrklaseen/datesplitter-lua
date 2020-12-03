@@ -17,7 +17,7 @@ function TestDateSplitter:testWithOnePartReturnsDateAtStartOfInterval()
     -- Arrange
     startDate = os.time({year=2016, month=1, day=1})
     endDate = os.time({year=2016, month=1, day=2})
-    expected = os.time({year=2016, month=1, day=1, hour=0, minute=0, second=0})
+    expected = os.time({year=2016, month=1, day=1, hour=0, min=0, sec=0})
     -- Act
     ds = DateSplitter:new(startDate, endDate)
     dates = ds:split(1)
@@ -29,8 +29,8 @@ function TestDateSplitter:testWithTwoPartsReturnsDateAtStartAndEndOfInterval()
     -- Arrange
     startDate = os.time({year=2016, month=1, day=1})
     endDate = os.time({year=2016, month=1, day=1})
-    expectedOne = os.time({year=2016, month=1, day=1, hour=0, minute=0, second=0})
-    expectedTwo = os.time({year=2016, month=1, day=1, hour=23, minute=59, second=59})
+    expectedOne = os.time({year=2016, month=1, day=1, hour=0, min=0, sec=0})
+    expectedTwo = os.time({year=2016, month=1, day=1, hour=23, min=59, sec=59})
     -- Act
     ds = DateSplitter:new(startDate, endDate)
     dates = ds:split(2)
@@ -44,8 +44,8 @@ function TestDateSplitter:testWithSevenPartsReturnsDateAtStartAndEndOfInterval()
     parts = 7
     startDate = os.time({year=2016, month=1, day=1})
     endDate = os.time({year=2016, month=1, day=1})
-    expectedFirst = os.time({year=2016, month=1, day=1, hour=0, minute=0, second=0})
-    expectedLast = os.time({year=2016, month=1, day=1, hour=23, minute=59, second=59})
+    expectedFirst = os.time({year=2016, month=1, day=1, hour=0, min=0, sec=0})
+    expectedLast = os.time({year=2016, month=1, day=1, hour=23, min=59, sec=59})
     -- Act
     ds = DateSplitter:new(startDate, endDate)
     dates = ds:split(parts)
@@ -59,8 +59,8 @@ function TestDateSplitter:testWith1137PartsReturnsDateAtStartAndEndOfInterval()
     parts = 1137
     startDate = os.time({year=2016, month=1, day=1})
     endDate = os.time({year=2016, month=1, day=1})
-    expectedFirst = os.time({year=2016, month=1, day=1, hour=0, minute=0, second=0})
-    expectedLast = os.time({year=2016, month=1, day=1, hour=23, minute=59, second=59})
+    expectedFirst = os.time({year=2016, month=1, day=1, hour=0, min=0, sec=0})
+    expectedLast = os.time({year=2016, month=1, day=1, hour=23, min=59, sec=59})
     -- Act
     ds = DateSplitter:new(startDate, endDate)
     dates = ds:split(parts)
@@ -74,9 +74,9 @@ function TestDateSplitter:testWithThreePartsAndThreeDaysReturnsDatesAtStartOfEac
     parts = 3
     startDate = os.time({year=2016, month=1, day=1})
     endDate = os.time({year=2016, month=1, day=3})
-    expectedOne = os.time({year=2016, month=1, day=1, hour=0, minute=0, second=0})
-    expectedTwo = os.time({year=2016, month=1, day=2, hour=0, minute=0, second=0})
-    expectedThree = os.time({year=2016, month=1, day=3, hour=0, minute=0, second=0})
+    expectedOne = os.time({year=2016, month=1, day=1, hour=0, min=0, sec=0})
+    expectedTwo = os.time({year=2016, month=1, day=2, hour=0, min=0, sec=0})
+    expectedThree = os.time({year=2016, month=1, day=3, hour=0, min=0, sec=0})
     -- Act
     ds = DateSplitter:new(startDate, endDate)
     dates = ds:split(parts)

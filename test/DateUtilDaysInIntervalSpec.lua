@@ -44,7 +44,7 @@ end
 function TestDateUtilDaysInInterval:testWithEndAlmostOneWeekAfterStart()
     -- Arrange
     startDate = os.time({year=2016, month=1, day=1, hour=0})
-    endDate = os.time({year=2016, month=1, day=7, hour=23, minute=59, second=59})
+    endDate = os.time({year=2016, month=1, day=7, hour=23, min=59, sec=59})
     -- Act
     daysInInterval = DateUtil.daysInInterval(startDate, endDate)
     -- Assert
