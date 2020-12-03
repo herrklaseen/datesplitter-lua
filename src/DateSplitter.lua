@@ -81,7 +81,18 @@ function DateSplitter:shiftDistribution(distribution)
     return distribution
   end
 
-  shifted = { table.unpack(distribution, firstPositive) }
+  shifted = {}
+
+  -- Cannot use table.unpack here as it
+  -- is not supported equally across
+  -- lua 5 versions
+  local shiftIndex = 1
+  for slot,parts in ipairs(distribution) do
+    if slot >= firstPositive then
+      shifted[shiftIndex] = parts
+      shiftIndex = shiftIndex + 1
+    end
+  end
 
   for i=1,firstPositive-1 do
     table.insert(shifted, distribution[i])
