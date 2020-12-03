@@ -3,8 +3,7 @@ Fraction Extensions
 Provides a fractional numeric datatype with exact evaluations
 ]]
 
-local path = (...):match("^(.-)%..-%..-$") .. "."
-local support = require(path .. "support")
+local support = require("src.support")
 local fraction
 local fraction_meta
 

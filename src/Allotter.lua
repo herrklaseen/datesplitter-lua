@@ -1,4 +1,4 @@
-local fraction = require('symbolics.types.fraction')
+local fraction = require('src.fraction')
 
 local Allotter = {}
 function Allotter:allot(parts, slots)
